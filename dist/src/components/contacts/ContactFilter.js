@@ -3,7 +3,7 @@ import {
   useContacts,
   filterContacts,
   clearFilter
-} from '../../context/contact/ContactState';
+} from '../..//context/contact/ContactState';
 
 const ContactFilter = () => {
   // we just need the conact dispatch without state.
