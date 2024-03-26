@@ -32,5 +32,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://backend-pickkshop-b9ea88f25e01.herokuapp.com"
+  "proxy": "http://localhost:8001"
 }
