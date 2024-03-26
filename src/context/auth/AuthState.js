@@ -27,8 +27,9 @@ export const useAuth = () => {
 
 // Load User
 export const loadUser = async (dispatch) => {
+  const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
   try {
-    const res = await axios.get('/api/auth');
+    const res = await axios.get(`${uri}/api/auth`);
 
     dispatch({
       type: USER_LOADED,
@@ -41,8 +42,9 @@ export const loadUser = async (dispatch) => {
 
 // Register User
 export const register = async (dispatch, formData) => {
+  const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
   try {
-    const res = await axios.post('/api/users', formData);
+    const res = await axios.post(`${uri}/api/users`, formData);
 
     dispatch({
       type: REGISTER_SUCCESS,
@@ -60,8 +62,9 @@ export const register = async (dispatch, formData) => {
 
 // Login User
 export const login = async (dispatch, formData) => {
+  const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
   try {
-    const res = await axios.post('/api/auth', formData);
+    const res = await axios.post(`${uri}/api/auth`, formData);
 
     dispatch({
       type: LOGIN_SUCCESS,

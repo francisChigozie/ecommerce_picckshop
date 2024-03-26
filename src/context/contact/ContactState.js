@@ -30,8 +30,9 @@ export const useContacts = () => {
 
 // Get Contacts
 export const getContacts = async (dispatch) => {
+  const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
   try {
-    const res = await axios.get('/api/contacts');
+    const res = await axios.get(`${uri}/api/contacts`);
 
     dispatch({
       type: GET_CONTACTS,
@@ -47,8 +48,9 @@ export const getContacts = async (dispatch) => {
 
 // Get Shops
 export const getShops = async (dispatch) => {
+  const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
   try {
-    const res = await axios.get('/api/shops');
+    const res = await axios.get(`${uri}/api/shops`);
 
     dispatch({
       type: GET_SHOPS,
@@ -64,8 +66,9 @@ export const getShops = async (dispatch) => {
 
 // Add Contact
 export const addContact = async (dispatch, contact) => {
+  const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
   try {
-    const res = await axios.post('/api/contacts', contact);
+    const res = await axios.post(`${uri}/api/contacts`, contact);
     dispatch({
       type: ADD_CONTACT,
       payload: res.data
@@ -81,9 +84,9 @@ export const addContact = async (dispatch, contact) => {
 
 // Get A Single Contact
 export const getContact = async (dispatch, id) => {
- 
+  const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
   try {
-    await axios.get(`/api/contacts/${id}`);
+    await axios.get(`${uri}/api/contacts/${id}`);
 
     dispatch({
       type: GET_CONTACT,
@@ -99,8 +102,9 @@ export const getContact = async (dispatch, id) => {
 
 // Delete Contact
 export const deleteContact = async (dispatch, id) => {
+  const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
   try {
-    await axios.delete(`/api/auth/${id}`);
+    await axios.delete(`${uri}/api/auth/${id}`);
 
     dispatch({
       type: DELETE_CONTACT,
@@ -116,8 +120,9 @@ export const deleteContact = async (dispatch, id) => {
 
 // Update Contact
 export const updateContact = async (dispatch, contact) => {
+  const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
   try {
-    const res = await axios.put(`/api/contacts/${contact._id}`, contact);
+    const res = await axios.put(`${uri}/api/contacts/${contact._id}`, contact);
 
     dispatch({
       type: UPDATE_CONTACT,

@@ -35,8 +35,9 @@ const ShopState = props => {
     // Search Shops
     const searchShops = async (text) => {
         setLoading()
-    
-        const res = await axios.get(`/api/shops`)
+        const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
+
+        const res = await axios.get(`${uri}/api/shops`)
     
        dispatch({
         type: SEARCH_SHOPS,
@@ -46,8 +47,10 @@ const ShopState = props => {
     // get Shop
     const getShop = async(shop) => {
         setLoading()
+
+        const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
   
-        const res =  await axios.get(`/api/shops/${id}`) 
+        const res =  await axios.get(`${uri}/api/shops/${id}`) 
      
         dispatch({
             type: GET_SHOP,
@@ -62,6 +65,8 @@ const ShopState = props => {
 
     // Add Shop
     const addShop = async shop => {
+      const uri = 'https://backend-pickkshop-b9ea88f25e01.herokuapp.com'
+
       const config = {
         headers: {
           'Content-Type': 'application/json'
@@ -69,7 +74,7 @@ const ShopState = props => {
       }
 
       try {
-        const res = await axios.post('/api/shops', shop, config);
+        const res = await axios.post(`${uri}/api/shops`, shop, config);
 
         dispatch({ type: ADD_SHOP,
                    payload: res.data });
@@ -85,7 +90,7 @@ const ShopState = props => {
    // Delete SHOP
    const deleteShop = async id => {
      try {
-       await axios.delete(`/api/shops/${id}`);
+       await axios.delete(`${uri}/api/shops/${id}`);
 
        dispatch({ 
          type: DELETE_SHOP,
@@ -107,7 +112,7 @@ const ShopState = props => {
      }
 
      try {
-     const res = await axios.put(`/api/shops/${shop._id}`, shop, config);
+     const res = await axios.put(`${uri}/api/shops/${shop._id}`, shop, config);
 
      dispatch({ 
                 type: UPDATE_SHOP,
